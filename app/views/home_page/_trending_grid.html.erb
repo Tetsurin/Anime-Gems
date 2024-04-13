@@ -5,12 +5,12 @@
       <div class = "trending-anime-items">
          <div>
             <div class = "anime-posters-wrapper">
-               <%= image_tag('solo_leveling_poster.jpg', :class => "anime-posters")%>
+               <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@anime[0].poster).html_safe}", class: "anime-posters" %>
             </div>
-            <h2 class = "trending-anime-title">Тільки я візьму новий рівень</h2>
+            <h2 class = "trending-anime-title"> <%=@anime[0].name %> </h2>
          </div>
          <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2024<span>
+            <span class = "trending-anime-release"><%=@anime[0].content_type %> / <%=@anime[0].release_date.year %><span>
          </div>
       </div>
 

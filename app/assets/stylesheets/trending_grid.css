@@ -18,8 +18,9 @@
 }
 
 .anime-posters{
-    height: auto; 
+    height: 23.75rem; 
     max-height: 23.75rem;
+    width: 100%;
 }
 
 .trending-grid-title{
