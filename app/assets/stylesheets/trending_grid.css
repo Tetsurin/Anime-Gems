@@ -1,0 +1,43 @@
+.trending-grid {
+    padding: 0.625rem 2.5rem 2.5rem 2.5rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 1.25rem;
+    grid-auto-flow: column dense;
+    justify-content: space-between;
+    align-content: start;
+}
+
+.trending-anime-items{
+    height: 30.25rem;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+.anime-posters{
+    height: auto; 
+    max-height: 23.75rem;
+}
+
+.trending-grid-title{
+    color: white;
+    padding: 0 2.5rem 0.625rem;
+}
+
+.trending-anime-title{  
+    color: white;
+    font-size: 1.188rem;
+}
+
+.trending-anime-release{
+    color: #00d873ec;
+    font-size: 0.938rem
+
+}
+
+.trending-anime-release-wrapper{
+    text-align: right;
+}

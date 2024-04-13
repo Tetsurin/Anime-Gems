@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AnimeGems</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <nav>
+    <div class="nav-content">
+      <div class="site-logo">
+        <%= link_to "Anime Gems", root_path %>  
+      </div>
+        <ul class="nav-links">
+          <li><%= link_to "Аніме", "#" %></li>
+          <li><%= link_to "Випадкове аніме", "#" %></li>
+        </ul>
+    </div>
+  </nav>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

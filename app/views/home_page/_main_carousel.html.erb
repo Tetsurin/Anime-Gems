@@ -1,0 +1,253 @@
+<div class="main-carousel-container">
+	
+	<div class="slides">
+		<div class = "slide">
+			<%= image_tag('attack_on_titan_bg.jpg', :class => "slide_img active") %>
+			<div class = "overlay">
+				<div class = "logo-wrapper">
+					<%= image_tag('attack_on_titan_logo.png', :class => "slider-logo stop-slider") %> 
+				</div>
+				<div class = "description-wrapper", style = "display: none"> 			
+					<p class = "slider-description stop-slider">
+						Відомі в Японії як Shingeki no Kyojin, багато років тому останні залишки людства були змушені відступити за високі стіни укріпленого міста, щоб врятуватися від величезних титанів-людожерів, які бродили по землі за межами їхньої фортеці. Лише героїчні воїни, які врятувалися, змогли вирватися на волю... 
+					</p>
+				</div>
+			</div>
+		</div>  
+		
+		<div class = "slide">
+			<%= image_tag('classroom_of_the_elite_bg.jpg', :class => "slide_img") %>
+			<div class = "overlay">		
+				<div class = "logo-wrapper", style = "display: none">
+					<%= image_tag('classroom_of_the_elite_logo.png', :class => "slider-logo stop-slider") %> 
+				</div>
+				<div class = "description-wrapper", style = "display: none">
+					<p class = "slider-description stop-slider">
+						Кійотака Аянокоджі щойно вступив до токійської старшої школи Koudo Ikusei, де кажуть, що 100% учнів вступають до коледжу або знаходять роботу. Але він потрапляє до класу 1-D, де навчаються всі...
+					</p>		
+				</div>
+			</div>
+		</div>
+		
+		<div class = "slide">
+			<%= image_tag('jobless_reincarnation_2_bg.jpg', :class => "slide_img") %>
+			<div class = "overlay">	
+				<div class = "logo-wrapper ", style = "display: none">
+					<%= image_tag('jobless_reincarnation_2_logo.png', :class => "slider-logo stop-slider") %>
+				</div>
+				<div class = "description-wrapper", style = "display: none">
+					<p class = "slider-description stop-slider">
+						Коли 34-річний невдаха потрапляє під колеса вантажівки, його історія на цьому не закінчується. Перевтілившись у новому світі у вигляді немовляти, Руді хапатиметься за кожну можливість жити так, як він завжди хотів. Озброєний новими друзями, щойно набутими магічними здібностями та сміливістю робити те, про що він завжди мріяв, він вирушає в епічну пригоду - з усім своїм минулим досвідом неушкодженим!
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class = "slide">
+			<%= image_tag('friren_bg.jpg', :class => "slide_img") %>
+			<div class = "overlay overlay-gradient">
+				<div class = "logo-wrapper", style = "display: none">
+					<%= image_tag('friren_logo.png', :class => "slider-logo stop-slider") %>
+				</div>
+				<div class = "description-wrapper", style = "display: none">
+					<p class = "slider-description stop-slider">
+						Після того, як загін героїв переміг Короля Демонів, вони відновили мир на землі і повернулися до усамітненого життя. Минають покоління, і ельфійський маг Фрірен стикається віч-на-віч зі смертністю людства...
+					</p>
+				</div>  
+			</div>
+		</div>
+
+		<div class = "slide">
+			<%= image_tag('one_pice_bg.jpg', :class => "slide_img") %>
+			<div class = "overlay">
+				<div class = "logo-wrapper", style = "display: none">
+					<%= image_tag('one_pice_logo.png', :class => "slider-logo stop-slider") %>
+				</div>
+				<div class = "description-wrapper", style = "display: none">
+					<p class = "slider-description stop-slider">
+						Монкі. Д. Луффі відмовляється дозволити комусь чи чомусь стати на заваді його прагненню стати королем усіх піратів. Проклавши курс до підступних вод Великої Лінії та за її межами, це одна з найсміливіших...
+					</p>
+				</div>
+			</div>
+		</div>
+      
+      
+	</div>
+
+    <div class="main-carousel-lines-container stop-slider">
+		
+		<div class = "main-carousel-lines-wrapper ">
+			<div class="main-carousel-lines active" attr='0' onclick="switchImage(this)"></div>
+		</div>
+			
+		<div class = "main-carousel-lines-wrapper">
+			<div class="main-carousel-lines" attr='1' onclick="switchImage(this)"></div>
+		</div>  
+		
+		<div class = "main-carousel-lines-wrapper">
+			<div class="main-carousel-lines" attr='2' onclick="switchImage(this)"></div>
+		</div>		
+		
+		<div class = "main-carousel-lines-wrapper">  
+			<div class="main-carousel-lines" attr='3' onclick="switchImage(this)"></div>
+		</div>
+		
+		<div class = "main-carousel-lines-wrapper">
+			<div class="main-carousel-lines" attr='4' onclick="switchImage(this)"></div>
+		</div>
+			
+	</div>
+
+	<div class="slide-buttons stop-slider">
+		<span class="next stop-sliding">&#10095;</span>
+		<span class="prev stop-sliding">&#10094;</span>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+	
+	// Access the Images
+	let slideImages = document.querySelectorAll('.slide_img');
+	let slideOverlays = document.querySelectorAll('.overlay'); 
+	let slideDescriptions = document.querySelectorAll('.description-wrapper');
+	let slideLogos = document.querySelectorAll('.logo-wrapper');
+	// Access the next and prev buttons
+	let next = document.querySelector('.next');
+	let prev = document.querySelector('.prev');
+	// Access the indicators
+	let mainCarouselLines = document.querySelectorAll('.main-carousel-lines');
+	
+
+	var counter = 0;
+	slideDescriptions[counter].style.display = "";
+
+	function playProgressBarAnimation() {
+    	const activeProgressBar = document.querySelector(".main-carousel-lines-wrapper .active");
+    	if (activeProgressBar) {
+        	activeProgressBar.style.animation = 'progressBar 5000ms linear forwards';
+        	activeProgressBar.style.background = '#00d873';
+    	}
+	}
+
+	
+	// Code for next button
+	next.addEventListener('click', slideNext);
+	function slideNext(){
+		slideLogos[counter].style.display = "";
+		slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'next1 0.5s ease-in forwards';
+
+		if(counter >= slideImages.length-1){
+			counter = 0;
+			slideLogos[counter].style.display = "";
+		}
+		else{
+			
+			counter++;
+			slideDescriptions[counter].style.display = "";
+			slideLogos[counter].style.display = "";
+		}
+		slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'next2 0.5s ease-in forwards';
+		indicators();
+
+	}
+
+	// Code for prev button
+	prev.addEventListener('click', slidePrev);
+	function slidePrev(){
+		slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'prev1 0.5s ease-in forwards';
+		if(counter == 0){
+			counter = slideImages.length-1;
+			slideDescriptions[counter].style.display = "";
+			slideLogos[counter].style.display = "";
+		}
+		else{
+			
+			counter--;
+			slideDescriptions[counter].style.display = "";
+			slideLogos[counter].style.display = "";
+
+		}
+		slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'prev2 0.5s ease-in forwards';
+		indicators();
+	}
+
+	// Auto slideing
+	function autoSliding(){
+		
+		deletInterval = setInterval(timer, 5000);
+		function timer(){
+			console.log("timer");
+			slideNext();
+			indicators();
+		}
+	}
+	
+	autoSliding();
+
+	// Stop auto sliding when mouse is over
+	let slideStoppers = document.querySelectorAll(".stop-slider");
+
+	slideStoppers.forEach(function(elem) {
+   		elem.addEventListener("mouseover", function() {
+        	clearInterval(deletInterval);
+			document.querySelector(".main-carousel-lines-wrapper .active").style.animationPlayState = "paused";
+			console.log("hovered");
+   	 	});
+	});
+	
+	// Resume sliding when mouse is out
+	slideStoppers.forEach(function(elem) {
+    	elem.addEventListener('mouseout', function() {
+        	autoSliding(); // Відновлюємо автослайдинг
+        	document.querySelector(".main-carousel-lines-wrapper .active").style.animationPlayState = "running"; // Відтворюємо анімацію
+    	});
+	});
+
+	// Add and remove active class from the indicators
+	function indicators(){
+		for(i = 0; i < mainCarouselLines.length; i++){
+			mainCarouselLines[i].className = mainCarouselLines[i].className.replace(' active', '');
+		}
+		mainCarouselLines[counter].className += ' active';
+	}
+
+	// Add click event to the indicator
+	function switchImage(currentImage){
+		currentImage.classList.add('active');
+		var imageId = currentImage.getAttribute('attr');
+		if(imageId > counter){
+		slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'next1 0.5s ease-in forwards';
+		slideDescriptions[counter].style.display = "";
+		slideLogos[counter].style.display = "";
+		counter = imageId;
+		slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'next2 0.5s ease-in forwards';
+		slideDescriptions[counter].style.display = "";
+		slideLogos[counter].style.display = ""; 	
+		}
+		else if(imageId == counter){
+			return;
+		}
+		else{
+		slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'prev1 0.5s ease-in forwards';
+		slideDescriptions[counter].style.display = "";
+		slideLogos[counter].style.display = "";
+		counter = imageId;
+		slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+		slideOverlays[counter].style.animation = 'prev2 0.5s ease-in forwards';	
+		slideDescriptions[counter].style.display = "";
+		slideLogos[counter].style.display = "";
+		}
+		indicators();
+	}
+
+
+</script>
