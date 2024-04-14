@@ -4,20 +4,20 @@
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@anime[0].poster).html_safe}", class: "anime-posters" %>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[1].poster).html_safe}", class: "trending-anime-posters" %>
             </div>
-            <h2 class = "trending-anime-title"> <%=@anime[0].name %> </h2>
+            <h2 class = "trending-anime-title"> <%=@animes[1].name %> </h2>
          </div>
          <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release"><%=@anime[0].content_type %> / <%=@anime[0].release_date.year %><span>
+            <span class = "trending-anime-release"><%=@animes[1].content_type %> / <%=@animes[1].release_date.year %><span>
          </div>
       </div>
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag('classroom_of_the_elite_3_poster.jpg', :class => "anime-posters")%>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag('classroom_of_the_elite_3_poster.jpg', :class => "trending-anime-posters")%>
             </div>
             <h2 class = "trending-anime-title">Ласкаво просимо до класу еліт (3 сезон)</h2>
          </div>
@@ -28,8 +28,8 @@
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag('friren_poster.jpg', :class => "anime-posters")%>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag('friren_poster.jpg', :class => "trending-anime-posters")%>
             </div>
             <h2 class = "trending-anime-title">Фрірен, що проводжає в останню путь</h2>
          </div>
@@ -40,8 +40,8 @@
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag('mashl_2_poster.jpg', :class => "anime-posters")%>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag('mashl_2_poster.jpg', :class => "trending-anime-posters")%>
             </div>
             <h2 class = "trending-anime-title">Машл 2: претендентський іспит на божественного провидця</h2>
          </div>
@@ -52,8 +52,8 @@
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag('the_apothecary_diaries_poster.jpg', :class => "anime-posters")%>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag('the_apothecary_diaries_poster.jpg', :class => "trending-anime-posters")%>
             </div>
             <h2 class = "trending-anime-title">Монолог травниці</h2>
          </div>
@@ -64,8 +64,8 @@
 
       <div class = "trending-anime-items">
          <div>
-            <div class = "anime-posters-wrapper">
-               <%= image_tag('shangri_la_frontier_poster.jpg', :class => "anime-posters")%>
+            <div class = "trending-anime-posters-wrapper">
+               <%= image_tag('shangri_la_frontier_poster.jpg', :class => "trending-anime-posters")%>
             </div>
             <h2 class = "trending-anime-title">Кордон Шангрі-ла</h2>
          </div>

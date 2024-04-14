@@ -40,7 +40,7 @@ nav .nav-content{
 nav .site-logo a{
   font-weight: 500;
   font-size: 2.188rem;
-  background: linear-gradient(45deg, #008080, #00CCCC, #00FFFF, #00CC99, #009966, #006633);
+  background: linear-gradient(45deg, #008080, #00CCCC, #00CC99, #00CC99, #009966, #006633);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* color: linear-gradient(to left top, blue, red); */
