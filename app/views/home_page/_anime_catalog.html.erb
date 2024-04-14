@@ -7,133 +7,20 @@
 
         <div class = "catalog-grid-wrapper">
             <section class ="catalog-grid">
-                <div class = "catalog-anime-items">
-                    1
-                </div>
+                <% @animes.each do |anime| %>
+                    <div class = "catalog-anime-items">
+                        <div>
+                            <div class = "catalog-anime-posters-wrapper">
+                                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(anime.poster).html_safe}", class: "catalog-anime-posters" %>
+                            </div>
 
-                <div class = "catalog-anime-items">
-                    2
-                </div class = "catalog-anime-items">
-
-                <div class = "catalog-anime-items">
-                    3
-                </div>
-
-                <div class = "catalog-anime-items">
-                    4
-                </div>
-
-                <div class = "catalog-anime-items">
-                    5
-                </div>
-
-                <div class = "catalog-anime-items">
-                    6
-                </div>
-
-                <div class = "catalog-anime-items">
-                    7
-                </div>
-
-                <div class = "catalog-anime-items">
-                    8
-                </div>
-
-                <div class = "catalog-anime-items">
-                    9
-                </div>
-
-                <div class = "catalog-anime-items">
-                    10
-                </div>
-
-                <div class = "catalog-anime-items">
-                    11
-                </div class = "catalog-anime-items">
-
-                <div class = "catalog-anime-items">
-                    12
-                </div>
-
-                <div class = "catalog-anime-items">
-                    13
-                </div>
-
-                <div class = "catalog-anime-items">
-                    14
-                </div>
-
-                <div class = "catalog-anime-items">
-                    15
-                </div>
-
-                <div class = "catalog-anime-items">
-                    16
-                </div>
-
-                <div class = "catalog-anime-items">
-                    17
-                </div>
-
-                <div class = "catalog-anime-items">
-                    18
-                </div>
-
-                <div class = "catalog-anime-items">
-                    19
-                </div>
-
-                <div class = "catalog-anime-items">
-                    20
-                </div class = "catalog-anime-items">
-
-                <div class = "catalog-anime-items">
-                    21
-                </div>
-
-                <div class = "catalog-anime-items">
-                    22
-                </div>
-
-                <div class = "catalog-anime-items">
-                    23
-                </div>
-
-                <div class = "catalog-anime-items">
-                    24
-                </div>
-
-                <div class = "catalog-anime-items">
-                    25
-                </div>
-
-                <div class = "catalog-anime-items">
-                    26
-                </div>
-
-                <div class = "catalog-anime-items">
-                    27
-                </div>
-
-                <div class = "catalog-anime-items">
-                    28
-                </div>
-
-                <div class = "catalog-anime-items">
-                    29
-                </div>
-
-                <div class = "catalog-anime-items">
-                    30
-                </div>
-
-                <div class = "catalog-anime-items">
-                    31
-                </div>
-
-                <div class = "catalog-anime-items">
-                    32
-                </div>
+                            <h4 class = "catalog-anime-title"><%=anime.name %></h4>
+                        </div>
+                        <div class = "catalog-anime-release-wrapper">
+                            <span class = "catalog-anime-release"><%=anime.content_type %> / <%=anime.release_date.year %> </span>
+                        </div>
+                    </div>
+                <% end %>
             </section>
         </div>
     </div>

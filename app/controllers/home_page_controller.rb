@@ -1,5 +1,5 @@
 class HomePageController < ApplicationController
     def index
-        @anime = Anime.all
+        @animes = Anime.all
     end
 end
