@@ -13,7 +13,7 @@ body {
   margin: 0; 
   padding: 0; 
 }
-nav{
+.header{
   position: fixed;
   top: 0;
   left: 0;
@@ -21,15 +21,18 @@ nav{
   padding: 0.625rem;
   background: #15151a;
   transition: all 0.4s ease;
+  border-width: 0.006rem;
+  border-bottom-style: solid;  
+  border-color: rgba(128, 128, 128, 0.082);
   z-index: 1000;
   
 }
-nav.sticky{
+.header.sticky{
   padding: 1.25rem 1.25rem;
   background: #15151a;
   box-shadow: 0 0.313rem 0.625rem rgba(0, 0, 0, 0.1);
 }
-nav .nav-content{
+.header .nav-content{
   height: 100%;
   max-width: 75rem;
   margin: auto;
@@ -37,7 +40,7 @@ nav .nav-content{
   align-items: center;
   justify-content: space-between;
 }
-nav .site-logo a{
+.header .site-logo a{
   font-weight: 500;
   font-size: 2.188rem;
   background: linear-gradient(45deg, #008080, #00CCCC, #00CC99, #00CC99, #009966, #006633);
@@ -45,7 +48,7 @@ nav .site-logo a{
   -webkit-text-fill-color: transparent;
   /* color: linear-gradient(to left top, blue, red); */
 }
-nav.sticky .site-logo a{
+.header.sticky .site-logo a{
   color: #fff;
 }
 .nav-content .nav-links{
@@ -66,11 +69,11 @@ nav.sticky .site-logo a{
  .nav-links li a:hover{
    color: #00d873;
  }
- nav.sticky .nav-links li a{
+ .header.sticky .nav-links li a{
    color: #fff;
    transition: all 0.4s ease;
 }
- nav.sticky .nav-links li a:hover{
+.header.sticky .nav-links li a:hover{
   color: #00d873;
 }
 .home{
