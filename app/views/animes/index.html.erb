@@ -1,14 +1,290 @@
-<p style="color: green"><%= notice %></p>
+<div class = "main-container">
+   
+    <div class = "anime-catalog-container">
+        
+        <div class = "catalog-filter">
 
-<h1>Animes</h1>
+            <div class = "filter-titles">
+                <h3 class = "filter-status-title">Статус</h3>
+            </div>
+            <div class = "filter-status">
+                <div class = "filter-status-buttons">
+                    <span class = "filter-buttons-text">Онґоїнг</span>
+                </div>
 
-<div id="animes">
-  <% @animes.each do |anime| %>
-    <%= render anime %>
-    <p>
-      <%= link_to "Show this anime", anime %>
-    </p>
-  <% end %>
+                <div class = "filter-status-buttons">
+                    <span class = "filter-buttons-text">Завершено</span>
+                </div>
+            </div>
+            
+            <div class = "filter-titles">
+                <h3 class = "filter-type-title">Тип</h3>
+            </div>
+
+            <div class = "filter-type">
+                <div class = "filter-type-buttons">
+                    <span class = "filter-buttons-text">TV - Серіал</span>
+                </div>
+
+                <div class = "filter-type-buttons">
+                    <span class = "filter-buttons-text">Фільм</span>
+                </div>
+            </div>
+
+            <div class = "filter-titles">
+                <h3 class = "filter-year-title">Рік виходу</h3>
+            </div>
+
+            <div class = "filter-year">
+               <div class="range_container">
+                    
+                    <div class="form_control">
+                        <div class="form_control_container">
+                            <input class="form_control_container__time__input" type="number" id="fromInput" value="1970" min="1970" max="2024"/>
+                        </div>
+                        <div class="sliders_control">
+                            <input id="fromSlider" type="range" value="1970" min="1970" max="2024"/>
+                            <input id="toSlider" type="range" value="2024" min="1970" max="2024"/>
+                        </div>
+                        <div class="form_control_container">
+                            <input class="form_control_container__time__input" type="number" id="toInput" value="2024" min="1970" max="2024"/>
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class = "filter-titles">
+                <h3 class = "filter-status-title">Жанри</h3>
+            </div>
+
+            <div class = "filter-genres">
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Антиутопія</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Бойовик</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Буденність</span>
+                </div>
+                
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Війна</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Детектив</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Драма</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Еччі</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Жахи</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Ісекай</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Комедія</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Меха</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Містика</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Надприродне</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Пародія</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Пригоди</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Психологія</span>
+                </div>
+                
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Романтика</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Сейнен</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Спорт</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Трилер</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Фантастика</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Фентезі</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Школа</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Шьоджьо</span>
+                </div>
+
+                <div class = "filter-genres-buttons">
+                    <span class = "filter-buttons-text">Шьонен</span>
+                </div>
+            </div>
+
+            <div class = "filter-clear-button">
+                <h3 class = "filter-clear-button-text">Очистити</h3>
+            </div>
+            
+        </div>
+
+        <div class = "catalog-grid-wrapper">
+            <h2 class = "anime-catalog-title">Каталог аніме</h2>
+            <section class ="catalog-grid">
+                <% @animes.each do |anime| %>
+                    <div class = "catalog-anime-items">
+                        <div>
+                            <div class = "catalog-anime-posters-wrapper">
+                                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(anime.poster).html_safe}", class: "catalog-anime-posters" %>
+                            </div>
+
+                            <h4 class = "anime-catalog-names"><%=anime.name %></h4>
+                        </div>
+                        <div class = "catalog-anime-release-wrapper">
+                            <span class = "catalog-anime-release"><%=anime.content_type %> / <%=anime.release_date.year %> </span>
+                        </div>
+                    </div>
+                <% end %>
+            </section>
+            <%== pagy_nav(@pagy) %>
+        </div>
+    </div>
 </div>
 
-<%= link_to "New anime", new_anime_path %>
+<script type="text/javascript">  
+    function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#00d873ec', controlSlider);
+    if (from > to) {
+        fromSlider.value = to;
+        fromInput.value = to;
+    } else {
+        fromSlider.value = from;
+    }
+}
+    
+function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#00d873ec', controlSlider);
+    setToggleAccessible(toInput);
+    if (from <= to) {
+        toSlider.value = to;
+        toInput.value = to;
+    } else {
+        toInput.value = from;
+    }
+}
+
+function controlFromSlider(fromSlider, toSlider, fromInput) {
+  const [from, to] = getParsed(fromSlider, toSlider);
+  fillSlider(fromSlider, toSlider, '#C6C6C6', '#00d873ec', toSlider);
+  if (from > to) {
+    fromSlider.value = to;
+    fromInput.value = to;
+  } else {
+    fromInput.value = from;
+  }
+}
+
+function controlToSlider(fromSlider, toSlider, toInput) {
+  const [from, to] = getParsed(fromSlider, toSlider);
+  fillSlider(fromSlider, toSlider, '#C6C6C6', '#00d873ec', toSlider);
+  setToggleAccessible(toSlider);
+  if (from <= to) {
+    toSlider.value = to;
+    toInput.value = to;
+  } else {
+    toInput.value = from;
+    toSlider.value = from;
+  }
+}
+
+function getParsed(currentFrom, currentTo) {
+  const from = parseInt(currentFrom.value, 10);
+  const to = parseInt(currentTo.value, 10);
+  return [from, to];
+}
+
+function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+    const rangeDistance = to.max-to.min;
+    const fromPosition = from.value - to.min;
+    const toPosition = to.value - to.min;
+    controlSlider.style.background = `linear-gradient(
+      to right,
+      ${sliderColor} 0%,
+      ${sliderColor} ${(fromPosition)/(rangeDistance)*100}%,
+      ${rangeColor} ${((fromPosition)/(rangeDistance))*100}%,
+      ${rangeColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} ${(toPosition)/(rangeDistance)*100}%, 
+      ${sliderColor} 100%)`;
+}
+
+function setToggleAccessible(currentTarget) {
+  const toSlider = document.querySelector('#toSlider');
+  if (Number(currentTarget.value) <= 0 ) {
+    toSlider.style.zIndex = 2;
+  } else {
+    toSlider.style.zIndex = 0;
+  }
+}
+
+const fromSlider = document.querySelector('#fromSlider');
+const toSlider = document.querySelector('#toSlider');
+const fromInput = document.querySelector('#fromInput');
+const toInput = document.querySelector('#toInput');
+fillSlider(fromSlider, toSlider, '#C6C6C6', '#00d873ec', toSlider);
+setToggleAccessible(toSlider);
+
+fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
+toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
+</script>
+
+ <script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
