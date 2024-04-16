@@ -1,0 +1,152 @@
+.recent-anime-grid-section-title{
+    color: white;
+    font-size: 2.375rem;
+    margin: 0 1.875rem 1.875rem;
+}
+
+.recent-anime-grid{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 3.25rem;
+    justify-content: space-between;
+    align-content: start;
+}
+
+.recent-anime-grid-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.recent-anime-grid-posters-left{
+    height: 25rem;
+    mask-image: linear-gradient(to left, transparent, rgb(21, 21, 26) 10%,  rgb(21, 21, 26)); 
+}
+
+.recent-anime-grid-posters-right{
+    height: 25rem;
+    mask-image: linear-gradient(to right, transparent, rgb(21, 21, 26) 10%,  rgb(21, 21, 26)); 
+}
+
+
+
+.recent-anime-grid-description-wrapper-left{
+    display: flex;
+    width: 100%;
+    border-width: 0.006rem;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.205);
+    mask-image: linear-gradient(to right, transparent, rgb(21, 21, 26) 10%, rgb(21, 21, 26));
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.recent-anime-grid-description-wrapper-right{
+    display: flex;
+    width: 100%;
+    border-width: 0.006rem;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.205);
+    mask-image: linear-gradient(to left, transparent, rgb(21, 21, 26) 10%, rgb(21, 21, 26));
+    flex-direction: column;
+    align-items: center;
+}
+
+.recent-anime-grid-title-wrapper-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.188rem 3.75rem 1.25rem 3.75rem;
+}
+.recent-anime-grid-title-left{
+    font-size: 1.875rem;
+}
+
+.recent-anime-description-wrapper-left{
+    margin: 0 3.75rem 1.25rem 3.75rem;
+}
+
+.recent-anime-grid-title-wrapper-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.188rem 3.75rem 1.25rem 3.75rem;
+}
+.recent-anime-grid-title-right{
+    font-size: 1.875rem;
+}
+
+.recent-anime-description-wrapper-right{
+    margin: 0 3.75rem 1.25rem 3.75rem;
+}
+
+.recent-anime-button{
+    width: -webkit-fill-available;
+    margin: 1.25rem 3.75rem;
+    display: flex;
+    height: 3.938rem;
+    justify-content: center;
+    align-items: center;
+    border-width: 0.006rem;
+    border-style: solid;
+    border-color: #00d873;;
+    border-radius: 0.625rem;
+    background-color: #15151a;
+    color: #00d873;
+    transition: background-color 0.3s ease;
+}
+
+.recent-anime-button:hover{
+    background: #00d873;
+    color: black;
+    cursor: pointer;
+}
+
+.recent-anime-button:active{
+    background-color: gray;
+}
+
+.go-to-filter-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.125rem;
+}
+
+.go-to-filter-page-text{
+    color: white;
+    margin-bottom: 2.5rem;
+}
+
+.go-to-filter-page-button{
+    border-width: 0.006rem;
+    border-style: solid;
+    border-color: #00d873;;
+    border-radius: 0.625rem;
+    background-color: #15151a;
+    color: #00d873;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.125rem;
+    width: 15.625rem;
+    transition: background-color 0.3s ease;
+}
+
+.go-to-filter-page-button:hover{
+    background: #00d873;
+    color: black;
+    cursor: pointer;
+}
+
+.go-to-filter-page-button:active{
+    background-color: gray;
+}
