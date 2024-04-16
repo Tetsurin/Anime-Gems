@@ -3,7 +3,7 @@ class AnimesController < ApplicationController
 
   # GET /animes or /animes.json
   def index
-    @animes = Anime.all
+    @pagy, @animes = pagy(Anime.all)
   end
 
   # GET /animes/1 or /animes/1.json
