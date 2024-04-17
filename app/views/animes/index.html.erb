@@ -58,105 +58,11 @@
             </div>
 
             <div class = "filter-genres">
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Антиутопія</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Бойовик</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Буденність</span>
-                </div>
-                
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Війна</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Детектив</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Драма</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Еччі</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Жахи</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Ісекай</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Комедія</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Меха</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Містика</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Надприродне</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Пародія</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Пригоди</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Психологія</span>
-                </div>
-                
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Романтика</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Сейнен</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Спорт</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Трилер</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Фантастика</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Фентезі</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Школа</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Шьоджьо</span>
-                </div>
-
-                <div class = "filter-genres-buttons">
-                    <span class = "filter-buttons-text">Шьонен</span>
-                </div>
+                <%@genres.each do |genre|%>
+                    <div class = "filter-genres-buttons">
+                        <span class = "filter-buttons-text"><%=genre.name%></span>
+                    </div>
+                <%end%>
             </div>
 
             <div class = "filter-clear-button">

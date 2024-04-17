@@ -4,6 +4,7 @@ class AnimesController < ApplicationController
   # GET /animes or /animes.json
   def index
     @pagy, @animes = pagy(Anime.all)
+    @genres = Genre.all
   end
 
   # GET /animes/1 or /animes/1.json
@@ -65,6 +66,6 @@ class AnimesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def anime_params
-      params.require(:anime).permit(:name, :original_name, :description, :poster, :release_date, :type, :episode_number, :studio, :director, :logo, :horizontal_poster)
+      params.require(:anime).permit(:name, :original_name, :description, :poster, :release_date, :type, :total_episodes, :studio, :director, :logo, :horizontal_poster)
     end
 end
