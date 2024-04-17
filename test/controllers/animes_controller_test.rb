@@ -17,7 +17,7 @@ class AnimesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create anime" do
     assert_difference("Anime.count") do
-      post animes_url, params: { anime: { description: @anime.description, director: @anime.director, episode_number: @anime.episode_number, horizontal_poster: @anime.horizontal_poster, logo: @anime.logo, name: @anime.name, original_name: @anime.original_name, poster: @anime.poster, release_date: @anime.release_date, studio: @anime.studio, type: @anime.type } }
+      post animes_url, params: { anime: { description: @anime.description, director: @anime.director, total_episodes: @anime.total_episodes, horizontal_poster: @anime.horizontal_poster, logo: @anime.logo, name: @anime.name, original_name: @anime.original_name, poster: @anime.poster, release_date: @anime.release_date, studio: @anime.studio, type: @anime.type } }
     end
 
     assert_redirected_to anime_url(Anime.last)
@@ -34,7 +34,7 @@ class AnimesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update anime" do
-    patch anime_url(@anime), params: { anime: { description: @anime.description, director: @anime.director, episode_number: @anime.episode_number, horizontal_poster: @anime.horizontal_poster, logo: @anime.logo, name: @anime.name, original_name: @anime.original_name, poster: @anime.poster, release_date: @anime.release_date, studio: @anime.studio, type: @anime.type } }
+    patch anime_url(@anime), params: { anime: { description: @anime.description, director: @anime.director, total_episodes: @anime.total_episodes, horizontal_poster: @anime.horizontal_poster, logo: @anime.logo, name: @anime.name, original_name: @anime.original_name, poster: @anime.poster, release_date: @anime.release_date, studio: @anime.studio, type: @anime.type } }
     assert_redirected_to anime_url(@anime)
   end
 

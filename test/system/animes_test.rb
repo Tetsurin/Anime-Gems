@@ -16,7 +16,7 @@ class AnimesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @anime.description
     fill_in "Director", with: @anime.director
-    fill_in "Episode number", with: @anime.episode_number
+    fill_in "Episode number", with: @anime.total_episodes
     fill_in "Horizontal poster", with: @anime.horizontal_poster
     fill_in "Logo", with: @anime.logo
     fill_in "Name", with: @anime.name
@@ -37,7 +37,7 @@ class AnimesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @anime.description
     fill_in "Director", with: @anime.director
-    fill_in "Episode number", with: @anime.episode_number
+    fill_in "Episode number", with: @anime.total_episodes
     fill_in "Horizontal poster", with: @anime.horizontal_poster
     fill_in "Logo", with: @anime.logo
     fill_in "Name", with: @anime.name
