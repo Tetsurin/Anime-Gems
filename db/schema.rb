@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_17_165830) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_02_093113) do
   create_table "animes", force: :cascade do |t|
     t.string "name"
     t.string "original_name"
@@ -28,7 +28,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_17_165830) do
     t.binary "background_poster"
     t.string "release_status"
     t.integer "released_episodes"
-    t.string "age_rating"
+    t.binary "age_rating"
+    t.string "trailer_link"
   end
 
   create_table "animes_genres", id: false, force: :cascade do |t|
