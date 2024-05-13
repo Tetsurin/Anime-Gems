@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+To run docker:
+`docker build -t anime_gems . `
+`docker run -d -p 3000:3000 -v C:\Users\Naty\Desktop\vlad\Anime-Gems:/app anime_gems`
+
+or with "$(pwd)
+`docker run -d -p 3000:3000 -v "$(pwd)":/app anime_gems`

@@ -23,15 +23,18 @@ class AnimesController < ApplicationController
     # else
     #   render :_anime_posters
     # end
-    puts("333")
   end
 
   def _anime_posters
     @animes = Anime.all
-    puts("!!!!!!")
     @genres = Genre.all
-    selected_genres = params[:genre]&.split(',') || [] 
-    @animes = @animes.joins(:genres).where(genres: {name: selected_genres}) if selected_genres.any?
+    selected_genres = params[:genre]&.split(',') || []
+    genre_ids = Genre.where(name: selected_genres).pluck(:id)
+    @animes = @animes
+      .joins(:genres)
+      .where(genres: { id: genre_ids })
+      .group('animes.id')
+      .having('COUNT(DISTINCT genres.id) = ?', genre_ids.count)
     @pagy, @animes = pagy(@animes)
   end
 

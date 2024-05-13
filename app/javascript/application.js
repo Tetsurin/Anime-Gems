@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap'
 document.addEventListener('DOMContentLoaded', () => {
     const randomAnimeLink = document.getElementById('random-anime-link');
     randomAnimeLink.addEventListener('click', () => {
-      const randomIndex = Math.floor(Math.random() * <%= Anime.count %>) + 1;
+      const randomIndex = Math.floor(Math.random() * 24 + 1);
       localStorage.setItem('randomAnimeIndex', randomIndex);
     });
   
