@@ -3,21 +3,16 @@
     <section class = "recent-anime-grid">
         <div class = "recent-anime-grid-items">
             <div class = "recent-anime-grid-poster-wrapper">
-                <%= image_tag('wind_breaker_horizontal_poster.jpeg', class: "recent-anime-grid-posters-left")%>
+                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[10].horizontal_poster).html_safe}", class: "recent-anime-grid-posters-left"%>
             </div>
             <div class = "recent-anime-grid-description-wrapper-left">
                 <div class = "recent-anime-grid-title-wrapper-left">
-                    <h1 class = "recent-anime-grid-title-left">Вітролом</h1>
+                    <h1 class = "recent-anime-grid-title-left"><%=@animes[10].name%></h1>
                 </div>
                 <div class = "recent-anime-description-wrapper-left">
-                    <span class = "recent-anime-description-left">Харука Сакура терпіти не може слабаків. Ось чому він пішов у середню школу Фуріна, яка заслужила репутацію бойової школи без заборони, де учні щодня б'ються з тієї чи іншої причини чи ні. Його єдина мета – бути на чолі цієї напівкримінальної школи. Яке ж було здивування Сакури, коли з'ясувалося, що студенти тут були всіма улюбленими захисниками міста, щодня простягаючи руку допомоги всім, хто її потребував. І тут вони воюють не один з одним, а один за одного. Це історія про людину з самих низів, яка звикла розраховувати тільки на себе і вирішувати всі питання кулаками, і про те, як він стає героєм!</span>
+                    <span class = "recent-anime-description-left"><%=@animes[10].description%></span>
                 </div>
-
-                <div class = "recent-anime-button">
-                    <span class = "recent-anime-button-text">
-                        Перейти на сторінку
-                    </span>
-                </div>
+                <%= button_to "Перейти на сторінку", @animes[10], method: :get, class:"recent-anime-button"%>
             </div>
 
 
@@ -26,40 +21,32 @@
         <div class = "recent-anime-grid-items">
             <div class = "recent-anime-grid-description-wrapper-right">
                 <div class = "recent-anime-grid-title-wrapper-right">
-                    <h1 class = "recent-anime-grid-title-right">Кайджю №8</h1>
+                    <h1 class = "recent-anime-grid-title-right"><%=@animes[11].name%></h1>
                 </div>
                 <div class = "recent-anime-description-wrapper-right">
-                    <span class = "recent-anime-description-right">Гротескні, схожі на Ґодзіллу монстри, які називаються " кайджу", з'являються по всій Японії вже багато років поспіль. Для боротьби з цими чудовиськами елітний військовий підрозділ, відомий як Корпус оборони, щодня ризикує своїм життям, щоб захистити мирних жителів. Після того, як істота вбита, "прибиральники", що працюють під егідою Корпорації професійних прибиральників кайджу, залишаються, щоб позбутися його останків.</span>
+                    <span class = "recent-anime-description-right"><%=@animes[11].description%></span>
                 </div>
-                <div class = "recent-anime-button">
-                    <span class = "recent-anime-button-text">
-                        Перейти на сторінку
-                    </span>
-                </div>
+               <%= button_to "Перейти на сторінку", @animes[11], method: :get, class:"recent-anime-button"%>
             </div>
 
             <div class = "recent-anime-grid-poster-wrapper-right">
-                <%= image_tag('kaiju_8_horizontal_poster.jpeg', class: "recent-anime-grid-posters-right")%>
+                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[11].horizontal_poster).html_safe}", class: "recent-anime-grid-posters-left"%>
             </div>   
         </div>
 
         <div class = "recent-anime-grid-items">
             <div class = "recent-anime-grid-poster-wrapper-left">
-                <%= image_tag('sentai_daishikkaku_horizontal_poster.jpg', class: "recent-anime-grid-posters-left")%>
+                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[50].horizontal_poster).html_safe}", class: "recent-anime-grid-posters-left"%>
             </div>
 
             <div class = "recent-anime-grid-description-wrapper-left">
                 <div class = "recent-anime-grid-title-wrapper-left">
-                    <h1 class = "recent-anime-grid-title-left">Вперед! Вперед! Рейнджере-невдахо!</h1>
+                    <h1 class = "recent-anime-grid-title-left"><%=@animes[50].name%></h1>
                 </div>
                 <div class = "recent-anime-description-wrapper-left">
-                    <span class = "recent-anime-description-left">Тринадцять років тому на Землю вторглася Армія Кайджінів, але величні захисники людства, Воїни дракона, розгромили їх всього за рік! Відтоді щонеділі кайджіни повинні розігрувати принизливу поразку на очах у нічого не підозрюючої публіки. Вирішивши це змінити, кайджін D, проник до лав Рейнджерів. І за допомоги таємничої рейнджерки Юмеко Судзукірі, D, вдалося захопити один з божественних артефактів - єдину зброю, яка здатна знищити безсмертні тіла монстрів.</span>
+                    <span class = "recent-anime-description-left"><%=@animes[50].description%></span>
                 </div>
-                <div class = "recent-anime-button">
-                    <span class = "recent-anime-button-text">
-                        Перейти на сторінку
-                    </span>
-                </div>
+                <%= button_to "Перейти на сторінку", @animes[50], method: :get, class:"recent-anime-button"%>
             </div>
         </div>
 
@@ -67,40 +54,32 @@
 
             <div class = "recent-anime-grid-description-wrapper-right">
                 <div class = "recent-anime-grid-title-wrapper-right">
-                    <h1 class = "recent-anime-grid-title-right">Цей прекрасний світ, благословенний Богом! - 3 сезон</h1>
+                    <h1 class = "recent-anime-grid-title-right"><%=@animes[51].name%></h1>
                 </div>
                 <div class = "recent-anime-description-wrapper-right">
-                    <span class = "recent-anime-description-right">Після перемоги над ще одним генералом Короля Демонів, Кадзума разом із друзями повернулися додому. Хлопець думав, що після такого героїчного вчинку дівчата на нього кидатися будуть, але реальність виявилася набагато жорстокішою, і замість дівчат він отримав лише психологічні травми. Саме тому Кадзума вирішив податися в ченці. Чи вийде це у нього і які перешкоди стоятимуть у Кадзуми на шляху ви можете дізнатися під час перегляду нового сезону Коносуби.</span>
+                    <span class = "recent-anime-description-right"><%=@animes[51].description%></span>
                 </div>
-                <div class = "recent-anime-button">
-                    <span class = "recent-anime-button-text">
-                        Перейти на сторінку
-                    </span>
-                </div>
+                <%= button_to "Перейти на сторінку", @animes[51], method: :get, class:"recent-anime-button"%>
             </div>
 
             <div class = "recent-anime-grid-poster-wrapper-right">
-                <%= image_tag('konosuba_3_horizonatl_poster.jpg', class: "recent-anime-grid-posters-right")%>
+                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[51].horizontal_poster).html_safe}", class: "recent-anime-grid-posters-left"%>
             </div>
             
         </div>
 
         <div class = "recent-anime-grid-items">
             <div class = "recent-anime-grid-poster-wrapper-left">
-                <%= image_tag('jiisan_baasan_wakagaeru_horizontal_poster.jpg', class: "recent-anime-grid-posters-left")%>
+               <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[52].horizontal_poster).html_safe}", class: "recent-anime-grid-posters-left"%>
             </div>
             <div class = "recent-anime-grid-description-wrapper-left">
                 <div class = "recent-anime-grid-title-wrapper-left">
-                    <h1 class = "recent-anime-grid-title-left">Друга молодість дідуся та бабусі</h1>
+                    <h1 class = "recent-anime-grid-title-left"><%=@animes[52].name%></h1>
                 </div>
                 <div class = "recent-anime-description-wrapper-left">
-                    <span class = "recent-anime-description-left">Не лише старшокласники, які живуть у великих містах, потрапляють у надприродні ситуації та опиняються втягнутими у неординарні історії. Іноді в селі зі старенькими трапляються справжні дива. Так сталося з літньою подружньою парою, Сьодзо та Іне Сайто, які одного ранку знову прокинулися молодими та здоровими. Незважаючи на цей грандіозний поворот, у їхньому житті нічого не змінилося: вони, як і раніше, займаються садівництвом і домашніми справами, спілкуються з тими самими людьми і люблять один одного так само, як і раніше.</span>
+                    <span class = "recent-anime-description-left"><%=@animes[52].description%></span>
                 </div>
-                <div class = "recent-anime-button">
-                    <span>
-                        Перейти на сторінку
-                    </span>
-                </div>
+               <%= button_to "Перейти на сторінку", @animes[52], method: :get, class:"recent-anime-button"%>
             </div>
         </div>
     </section>

@@ -2,70 +2,70 @@
 	
 	<div class="slides">
 		<div class = "slide">
-			<%= image_tag('attack_on_titan_bg.jpg', :class => "slide_img active") %>
+			<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[0].background_poster).html_safe}", :class => "slide_img active" %>
 			<div class = "overlay">
 				<div class = "logo-wrapper">
-					<%= image_tag('attack_on_titan_logo.png', :class => "slider-logo stop-slider") %> 
+					<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[0].logo).html_safe}", :class => "slider-logo stop-slider" %> 
 				</div>
 				<div class = "description-wrapper", style = "display: none"> 			
 					<p class = "slider-description stop-slider">
-						Відомі в Японії як Shingeki no Kyojin, багато років тому останні залишки людства були змушені відступити за високі стіни укріпленого міста, щоб врятуватися від величезних титанів-людожерів, які бродили по землі за межами їхньої фортеці. Лише героїчні воїни, які врятувалися, змогли вирватися на волю... 
+							<%=@animes[0].description%>
 					</p>
 				</div>
 			</div>
 		</div>  
 		
 		<div class = "slide">
-			<%= image_tag('classroom_of_the_elite_bg.jpg', :class => "slide_img") %>
+			<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[2].background_poster).html_safe}", :class => "slide_img" %>
 			<div class = "overlay">		
 				<div class = "logo-wrapper", style = "display: none">
-					<%= image_tag('classroom_of_the_elite_logo.png', :class => "slider-logo stop-slider") %> 
+					<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[2].logo).html_safe}", :class => "slider-logo stop-slider"%> 
 				</div>
 				<div class = "description-wrapper", style = "display: none">
 					<p class = "slider-description stop-slider">
-						Кійотака Аянокоджі щойно вступив до токійської старшої школи Koudo Ikusei, де кажуть, що 100% учнів вступають до коледжу або знаходять роботу. Але він потрапляє до класу 1-D, де навчаються всі...
+						<%=@animes[2].description%>
 					</p>		
 				</div>
 			</div>
 		</div>
 		
 		<div class = "slide">
-			<%= image_tag('jobless_reincarnation_2_bg.jpg', :class => "slide_img") %>
+			<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[7].background_poster).html_safe}", :class => "slide_img"%>
 			<div class = "overlay">	
 				<div class = "logo-wrapper ", style = "display: none">
-					<%= image_tag('jobless_reincarnation_2_logo.png', :class => "slider-logo stop-slider") %>
+					<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[7].logo).html_safe}", :class => "slider-logo stop-slider" %>
 				</div>
 				<div class = "description-wrapper", style = "display: none">
 					<p class = "slider-description stop-slider">
-						Коли 34-річний невдаха потрапляє під колеса вантажівки, його історія на цьому не закінчується. Перевтілившись у новому світі у вигляді немовляти, Руді хапатиметься за кожну можливість жити так, як він завжди хотів. Озброєний новими друзями, щойно набутими магічними здібностями та сміливістю робити те, про що він завжди мріяв, він вирушає в епічну пригоду - з усім своїм минулим досвідом неушкодженим!
+						<%=@animes[7].description%>
 					</p>
 				</div>
 			</div>
 		</div>
 		
 		<div class = "slide">
-			<%= image_tag('friren_bg.jpg', :class => "slide_img") %>
+			<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[3].background_poster).html_safe}", :class => "slide_img"%>
 			<div class = "overlay overlay-gradient">
 				<div class = "logo-wrapper", style = "display: none">
-					<%= image_tag('friren_logo.png', :class => "slider-logo stop-slider") %>
+					<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[3].logo).html_safe}", :class => "slider-logo stop-slider"%>
 				</div>
 				<div class = "description-wrapper", style = "display: none">
 					<p class = "slider-description stop-slider">
-						Після того, як загін героїв переміг Короля Демонів, вони відновили мир на землі і повернулися до усамітненого життя. Минають покоління, і ельфійський маг Фрірен стикається віч-на-віч зі смертністю людства...
+						<%=@animes[3].description%>
 					</p>
 				</div>  
 			</div>
 		</div>
 
 		<div class = "slide">
-			<%= image_tag('one_piece_bg.jpg', :class => "slide_img") %>
+			<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[11].background_poster).html_safe}", :class => "slide_img"%>
 			<div class = "overlay">
 				<div class = "logo-wrapper", style = "display: none">
-					<%= image_tag('one_piece_logo.png', :class => "slider-logo stop-slider") %>
+					<%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[11].logo).html_safe}", :class => "slider-logo stop-slider"%>
 				</div>
 				<div class = "description-wrapper", style = "display: none">
 					<p class = "slider-description stop-slider">
-						Монкі. Д. Луффі відмовляється дозволити комусь чи чомусь стати на заваді його прагненню стати королем усіх піратів. Проклавши курс до підступних вод Великої Лінії та за її межами, це одна з найсміливіших...
+						<%=@animes[11].description%>
 					</p>
 				</div>
 			</div>
@@ -248,6 +248,4 @@
 		}
 		indicators();
 	}
-
-
 </script>
