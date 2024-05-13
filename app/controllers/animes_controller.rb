@@ -3,8 +3,41 @@ class AnimesController < ApplicationController
 
   # GET /animes or /animes.json
   def index
-    @pagy, @animes = pagy(Anime.all)
+    #@pagy, @animes = pagy(Anime.all)
+    @animes = Anime.all
     @genres = Genre.all
+    selected_genres = params[:genre]&.split(',') || []
+    puts("!!!")
+    puts(selected_genres)
+    @animes = @animes.joins(:genres).where(genres: {name: selected_genres}) if selected_genres.any?
+
+    puts(@animes)
+    @pagy, @animes = pagy(@animes)
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
+    # render :index, layout: selected_genres.empty? ? true : false
+    # if selected_genres.empty?
+    #   render :index
+    # else
+    #   render :_anime_posters
+    # end
+    puts("333")
+  end
+
+  def _anime_posters
+    @animes = Anime.all
+    puts("!!!!!!")
+    @genres = Genre.all
+    selected_genres = params[:genre]&.split(',') || [] 
+    @animes = @animes.joins(:genres).where(genres: {name: selected_genres}) if selected_genres.any?
+    @pagy, @animes = pagy(@animes)
+  end
+
+  def search
+    @query = params[:query]
+    @animes = Anime.where("name LIKE :query OR original_name LIKE :query", query: "%#{@query}%")
   end
 
   # GET /animes/1 or /animes/1.json

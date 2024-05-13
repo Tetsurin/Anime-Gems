@@ -1,0 +1,53 @@
+<div class = "catalog-grid-wrapper">
+    <h2 class = "anime-catalog-title">Каталог аніме</h2>
+    <section class="catalog-grid">
+        <% @animes.each do |anime| %>
+            <%= link_to anime_path(anime) do %>
+                <div class="catalog-anime-items">
+                    <div>
+                        <div class="catalog-anime-posters-wrapper">
+                            <%= image_tag "data:image/jpg;base64,#{Base64.encode64(anime.poster).html_safe}", class: "catalog-anime-posters" %>
+                        </div>
+                        <h4 class="anime-catalog-names"><%= anime.name %></h4>
+                    </div>
+                        
+                    <div class="catalog-anime-release-wrapper">
+                        <span class="catalog-anime-release"><%= anime.content_type %> / <%= anime.release_date.year %></span>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
+    </section>
+    <%== pagy_bootstrap_nav(@pagy, anchor_string: 'data-action="anime#_anime_posters"')%>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() { 
+        setTimeout(() => {
+            const paginationLinks = document.querySelectorAll('.pagination a');
+            if (paginationLinks) {
+                console.log(paginationLinks);
+                paginationLinks.forEach(link => {
+                    console.log(link);
+                    link.addEventListener("click", function(event) {
+                        console.log(event);
+                        event.preventDefault();
+                        const target = event.currentTarget;
+                        console.log(target);
+                        if (target.href) {
+                            console.log(target.href);
+                            fetch(target.href)
+                            .then(response => response.text())
+                            .then(data => {
+                                document.getElementById("anime-posters").innerHTML = data;
+                                window.scrollTo(0, 0); // Scroll to the top of the page
+                            })
+                            .catch(error => console.error('Error:', error));
+                        }
+                    });
+                });
+            }    
+        }, 3000);
+        
+    });   
+</script>

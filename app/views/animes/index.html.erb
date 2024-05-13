@@ -57,7 +57,7 @@
                 <h3 class = "filter-status-title">Жанри</h3>
             </div>
 
-            <div class = "filter-genres">
+            <div class = "filter-genres" >
                 <%@genres.each do |genre|%>
                     <div class = "filter-genres-buttons">
                         <span class = "filter-buttons-text"><%=genre.name%></span>
@@ -71,26 +71,9 @@
             
         </div>
 
-        <div class = "catalog-grid-wrapper">
-            <h2 class = "anime-catalog-title">Каталог аніме</h2>
-            <section class ="catalog-grid">
-                <% @animes.each do |anime| %>
-                    <div class = "catalog-anime-items">
-                        <div>
-                            <div class = "catalog-anime-posters-wrapper">
-                                <%= image_tag "data:image/jpg;base64,#{Base64.encode64(anime.poster).html_safe}", class: "catalog-anime-posters" %>
-                            </div>
-
-                            <h4 class = "anime-catalog-names"><%=anime.name %></h4>
-                        </div>
-                        <div class = "catalog-anime-release-wrapper">
-                            <span class = "catalog-anime-release"><%=anime.content_type %> / <%=anime.release_date.year %> </span>
-                        </div>
-                    </div>
-                <% end %>
-            </section>
-            <%== pagy_nav(@pagy) %>
-        </div>
+       <div id="anime-posters"> 
+            <%=render"anime_posters"%>
+       </div> 
     </div>
 </div>
 
@@ -184,7 +167,7 @@ fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSli
 toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 </script>
 
- <script>
+<script>
   let nav = document.querySelector("nav");
     window.onscroll = function() {
       if(document.documentElement.scrollTop > 20){
@@ -193,4 +176,42 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
         nav.classList.remove("sticky");
       }
     }
-  </script>
+</script>
+
+<script>
+    const genreButtons = document.querySelectorAll(".filter-genres-buttons");
+    let urlParams;
+    genreButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            button.classList.toggle("selected")
+            const genre = button.innerText;
+            urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('genre')) {
+                const currentGenres = urlParams.get('genre').split(',');
+                if (!currentGenres.includes(genre)) {
+                    urlParams.set('genre',`${currentGenres.join(',')},${genre}`);
+                } 
+            } else {
+                urlParams.set('genre', genre);
+            }
+            fetch(`/anime_posters?${urlParams.toString()}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // or response.json() if your response is JSON
+            })
+            .then(data => {
+                document.getElementById("anime-posters").innerHTML = "";
+                document.getElementById("anime-posters").innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            })
+            .finally(() => {
+                console.log(window.location);
+            });
+        });
+    });
+    
+</script>
