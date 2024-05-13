@@ -27,11 +27,13 @@
 .recent-anime-grid-posters-left{
     height: 25rem;
     mask-image: linear-gradient(to left, transparent, rgb(21, 21, 26) 10%,  rgb(21, 21, 26)); 
+    border-radius: 0.313rem;
 }
 
 .recent-anime-grid-posters-right{
     height: 25rem;
     mask-image: linear-gradient(to right, transparent, rgb(21, 21, 26) 10%,  rgb(21, 21, 26)); 
+    border-radius: 0.313rem;
 }
 
 
@@ -45,6 +47,7 @@
     mask-image: linear-gradient(to right, transparent, rgb(21, 21, 26) 10%, rgb(21, 21, 26));
     flex-direction: column;
     align-items: center;
+    border-radius: 0.313rem;
 }
 
 
@@ -57,6 +60,7 @@
     mask-image: linear-gradient(to left, transparent, rgb(21, 21, 26) 10%, rgb(21, 21, 26));
     flex-direction: column;
     align-items: center;
+    border-radius: 0.313rem;
 }
 
 .recent-anime-grid-title-wrapper-left{
@@ -77,7 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2.188rem 3.75rem 1.25rem 3.75rem;
+    margin: 1.5rem 3.75rem 1.25rem 3.75rem;
 }
 .recent-anime-grid-title-right{
     font-size: 1.875rem;
@@ -96,11 +100,12 @@
     align-items: center;
     border-width: 0.006rem;
     border-style: solid;
-    border-color: #00d873;;
+    border-color: #00d873;
     border-radius: 0.625rem;
     background-color: #15151a;
     color: #00d873;
     transition: background-color 0.3s ease;
+    user-select: none;
 }
 
 .recent-anime-button:hover{
@@ -110,7 +115,7 @@
 }
 
 .recent-anime-button:active{
-    background-color: gray;
+    background-color: #00d873c0;
 }
 
 .go-to-filter-page-container{
@@ -139,6 +144,7 @@
     height: 3.125rem;
     width: 15.625rem;
     transition: background-color 0.3s ease;
+    user-select: none;
 }
 
 .go-to-filter-page-button:hover{
@@ -148,5 +154,15 @@
 }
 
 .go-to-filter-page-button:active{
-    background-color: gray;
+    background-color: #00d873c0;
+}
+
+.button_to{
+    width: -webkit-fill-available;
+    margin: 0;
+    display: flex;
+    height: 3.938rem;
+    justify-content: center;
+    align-items: center;
+
 }
