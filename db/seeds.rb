@@ -57,6 +57,9 @@ anime47 = Anime.find_or_create_by(name: "Кожній тобі, яку я кох
 anime48 = Anime.find_or_create_by(name: "Мені, який тебе кохав")
 anime49 = Anime.find_or_create_by(name: "Татусі мимоволі")
 anime50 = Anime.find_or_create_by(name: "Месник")
+anime51 = Anime.find_or_create_by(name: "Вперед! Вперед! Рейнджере-невдахо!")
+anime52 = Anime.find_or_create_by(name: "Цей дивовижний світ, благословенний богинею! - 3 сезон")
+anime53 = Anime.find_or_create_by(name: "Друга молодість дідуся та бабусі")
 
 genre1 = Genre.find_or_create_by(name: "Антиутопія")
 genre2 = Genre.find_or_create_by(name: "Бойовик")
@@ -113,6 +116,7 @@ anime24.genres << [genre21, genre27]
 anime25.genres << [genre9, genre17, genre24]
 anime26.genres << [genre6, genre15, genre19, genre25]
 anime27.genres << [genre3, genre19, genre25]
+anime28.genres << [genre3, genre10, genre13]
 anime29.genres << [genre3, genre19, genre10]
 anime30.genres << [genre2, genre23, genre27]
 anime31.genres << [genre18, genre6, genre17, genre23]
@@ -135,3 +139,6 @@ anime47.genres << [genre19, genre23]
 anime48.genres << [genre19, genre23]
 anime49.genres << [genre2, genre10, genre17]
 anime50.genres << [genre5, genre2, genre6]
+anime51.genres << [genre2, genre23, genre27]
+anime52.genres << [genre10, genre9, genre24, genre16, genre17]
+anime53.genres << [genre10, genre19, genre15]
