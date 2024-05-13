@@ -1,0 +1,79 @@
+.search-result-grid{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    justify-content: space-between;
+    align-content: start;
+}
+
+.search-result-anime-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 29.5rem;
+    width: 16rem;
+    border-radius: 0.313rem;
+}
+
+.search-result-anime-items:hover{
+    background-color: rgba(107, 107, 107, 0.315);
+}
+
+.search-result-title{
+    border-width: 0.1rem;
+    border-bottom-style: solid;
+    border-color: #00d873;
+    width: max-content;
+    color: white;
+    padding: 2rem 0 1.5rem 0;
+    margin: 0;
+
+    
+}
+
+.search-result-anime-names{
+    color:white;
+    padding: 0.4rem;
+}
+  
+
+.search-result-anime-release-wrapper{
+    text-align: right;
+    margin: 0.45rem;
+}
+
+.search-result-anime-release{
+    color: #00d873ec;
+    font-size: 0.813rem;
+}
+
+.search-result-grid-wrapper{
+    width: 100%;
+}
+
+.search-result-anime-posters{
+    width: 16rem;
+    height: 22.5rem;
+    border-radius: 0.625rem;
+    padding: 0.313rem;
+  }
+
+.anime-search-result-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: fit-content;
+}
+
+.search-no-result-message{
+    padding: 17rem 1rem;
+    display: flex;
+    align-items: center;
+    color: #929292;
+    justify-content: center;
+}
+
+.search-result-title-wrapper{
+    padding-bottom: 2rem;
+}

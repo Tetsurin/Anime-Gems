@@ -1,0 +1,29 @@
+<div class = "main-container">
+    <div class = "search-result-title-wrapper">
+        <h1 class = "search-result-title">Результати пошуку "<%= @query %>"</h1>
+    </div>
+    <% if @animes.present? %>
+        <div class = "search-result-grid-wrapper">
+            <section class = "search-result-grid">
+                <% @animes.each do |anime| %>
+                    <%= link_to anime_path(anime) do %>
+                        <div class="search-result-anime-items">
+                            <div>
+                                <div class="search-result-anime-posters-wrapper">
+                                    <%= image_tag "data:image/jpg;base64,#{Base64.encode64(anime.poster).html_safe}", class: "search-result-anime-posters" %>
+                                </div>
+                                <h4 class="search-result-anime-names"><%= anime.name %></h4>
+                            </div>
+                        
+                            <div class="search-result-anime-release-wrapper">
+                                <span class="search-result-anime-release"><%= anime.content_type %> / <%= anime.release_date.year %></span>
+                            </div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </section>
+        </div>
+    <% else %>
+        <h3 class = "search-no-result-message">Немає результатів для вашого запиту.</h3>
+    <% end %>
+</div>
