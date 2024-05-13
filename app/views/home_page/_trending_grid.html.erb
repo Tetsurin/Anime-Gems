@@ -1,78 +1,91 @@
 <div class = "trending-grid-wrapper">
    <h1 class = "trending-grid-title">Найпопулярніші аніме за останній місяць</h1>
    <section class="trending-grid">
+      <%= link_to anime_path(@animes[1]) do %>
+         <div class = "trending-anime-items">
+            
+               <div>
+                  <div class = "trending-anime-posters-wrapper">
+                     <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[1].poster).html_safe}", class: "trending-anime-posters" %>
+                  </div>
+                  <h2 class = "trending-anime-title"> <%=@animes[1].name %> </h2>
+               </div>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[1].poster).html_safe}", class: "trending-anime-posters" %>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[1].content_type %> / <%=@animes[1].release_date.year %><span>
             </div>
-            <h2 class = "trending-anime-title"> <%=@animes[1].name %> </h2>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release"><%=@animes[1].content_type %> / <%=@animes[1].release_date.year %><span>
-         </div>
-      </div>
+      <%end%>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag('classroom_of_the_elite_3_poster.jpg', :class => "trending-anime-posters")%>
+      <%= link_to anime_path(@animes[2]) do %>
+         <div class = "trending-anime-items">
+            <div>
+               <div class = "trending-anime-posters-wrapper">
+                  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[2].poster).html_safe}", class: "trending-anime-posters" %>
+               </div>
+               <h2 class = "trending-anime-title"> <%=@animes[2].name %> </h2>
             </div>
-            <h2 class = "trending-anime-title">Ласкаво просимо до класу еліт (3 сезон)</h2>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[2].content_type %> / <%=@animes[2].release_date.year %><span>
+            </div>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2024<span>
-         </div>
-      </div>
+      <%end%>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag('friren_poster.jpg', :class => "trending-anime-posters")%>
+      <%= link_to anime_path(@animes[3]) do %>
+         <div class = "trending-anime-items">
+            <div>
+               <div class = "trending-anime-posters-wrapper">
+                  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[3].poster).html_safe}", class: "trending-anime-posters" %>
+               </div>
+               <h2 class = "trending-anime-title"> <%=@animes[3].name %> </h2>
             </div>
-            <h2 class = "trending-anime-title">Фрірен, що проводжає в останню путь</h2>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[3].content_type %> / <%=@animes[3].release_date.year %><span>
+            </div>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2023<span>
-         </div>
-      </div>
+      <%end%>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag('mashl_2_poster.jpg', :class => "trending-anime-posters")%>
+      <%= link_to anime_path(@animes[4]) do %>
+         <div class = "trending-anime-items">
+            <div>
+               <div class = "trending-anime-posters-wrapper">
+                  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[4].poster).html_safe}", class: "trending-anime-posters" %>
+               </div>
+               <h2 class = "trending-anime-title"> <%=@animes[4].name %> </h2>
             </div>
-            <h2 class = "trending-anime-title">Машл 2: претендентський іспит на божественного провидця</h2>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[4].content_type %> / <%=@animes[4].release_date.year %><span>
+            </div>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2024<span>
-         </div>
-      </div>
+      <%end%>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag('the_apothecary_diaries_poster.jpg', :class => "trending-anime-posters")%>
+      <%= link_to anime_path(@animes[5]) do %>
+         <div class = "trending-anime-items">
+            <div>
+               <div class = "trending-anime-posters-wrapper">
+                  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[5].poster).html_safe}", class: "trending-anime-posters" %>
+               </div>
+               <h2 class = "trending-anime-title"> <%=@animes[5].name %> </h2>
             </div>
-            <h2 class = "trending-anime-title">Монолог травниці</h2>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[5].content_type %> / <%=@animes[5].release_date.year %><span>
+            </div>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2023<span>
-         </div>
-      </div>
+      <%end%>
 
-      <div class = "trending-anime-items">
-         <div>
-            <div class = "trending-anime-posters-wrapper">
-               <%= image_tag('shangri_la_frontier_poster.jpg', :class => "trending-anime-posters")%>
+      <%= link_to anime_path(@animes[6]) do %>
+         <div class = "trending-anime-items">
+            <div>
+               <div class = "trending-anime-posters-wrapper">
+                  <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@animes[6].poster).html_safe}", class: "trending-anime-posters" %>
+               </div>
+               <h2 class = "trending-anime-title"> <%=@animes[6].name %> </h2>
             </div>
-            <h2 class = "trending-anime-title">Кордон Шангрі-ла</h2>
+            <div class = "trending-anime-release-wrapper">
+               <span class = "trending-anime-release"><%=@animes[6].content_type %> / <%=@animes[6].release_date.year %><span>
+            </div>
          </div>
-         <div class = "trending-anime-release-wrapper">
-            <span class = "trending-anime-release">TV серіал / 2023<span>
-         </div>
-      </div>
+      <%end%>
 
    </section>;
 </div>
