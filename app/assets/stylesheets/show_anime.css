@@ -1,0 +1,194 @@
+.anime-show-background-image{
+    width: 100%;
+    height: 105rem;
+    filter: blur(3.125rem);
+    position: relative;
+    z-index: -1;
+}
+
+.anime-show-page-container{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: max-content;
+    position: absolute;
+}
+
+.anime-show-characteristics-container{
+    display: flex;
+    width: 100%;
+    padding-bottom: 1.25rem;
+}
+
+.main-container-anime-show-page{
+    padding: 7rem 15.625rem 4.688rem 15.625rem;
+    height: fit-content;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+}
+
+.anime-show-poster{
+    height: 31rem;
+    width: 23rem;
+    border-radius: 0.313rem;
+}
+.anime-details-container{
+    padding-left: 1.875rem;
+    width: 60%;
+}
+
+.anime-show-name{
+    color: white;
+}
+
+.anime-show-original-name{
+    color: gray;
+}
+
+.anime-show-name-wrapper{
+    display: flex;
+    padding-bottom: 0.625rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.anime-show-original-name-wrapper{
+    padding: 0.625rem 0 0.625rem 0;
+}
+
+.anime-show-title-container{
+    padding-left: 0.625rem;
+    border-width: 0.1rem;
+    border-bottom-style: solid;
+    border-color: rgba(128, 128, 128, 1);
+}
+
+.anime-show-details-value-container{
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+.anime-show-details-name-container{
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+.anime-show-description-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.625rem 3.125rem 0 0.625rem;
+}
+
+.anime-show-details-name{
+    padding: 0.438rem;
+    font-size: 1.25rem;
+}
+
+.anime-show-details-value{
+    padding: 0.438rem 0 0.438rem 0.438rem;
+    font-size: 1.25rem;
+}
+
+.genres-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    padding: 1.875rem 3.125rem 1.125rem 0;
+}
+
+.genre-buttons{
+    display: flex;
+    height: 2.5rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-width: 0.006rem;
+    border-style: solid;
+    border-color: #00d873;
+    color: white;
+    border-radius: 0.625rem;
+    margin: 0 0.625rem 0 0.625rem;   
+    user-select: none;
+}
+
+.genre-buttons:hover{
+    background: #00d873d3;
+    color: black;
+    cursor: pointer;
+}
+
+.anime-show-description{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.genre-buttons-text{
+    font-size: 0.75rem;
+}
+
+.anime-show-age-rating-image{
+    height: 3.313rem;
+    padding: 0 1.813rem 0 0.625rem;
+}
+
+.anime-show-details-values-container{
+    display: flex;
+    padding: 0 0 0 1.5rem;
+    width: 22%;
+    border-width: 0.1rem;
+    border-left-style: solid;
+    border-color: rgba(128, 128, 128, 1);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+
+}
+
+.anime-show-details-icon{
+    height: 1.875rem;
+}
+
+.anime-show-details-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.625rem 0 0.625rem 0;
+}
+
+.anime-show-details-icon-wrapper{
+    padding-right: 0.625rem;
+}
+
+.anime-show-trailer-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+}
+
+.anime-show-trailer-title{
+    color: white;
+    border-width: 0.1rem;
+    border-bottom-style: solid;
+    border-color: #00d873;
+    padding: 1.25rem;
+}
+.anime-show-trailer{
+    width: 100%;
+    height: 50.25rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}

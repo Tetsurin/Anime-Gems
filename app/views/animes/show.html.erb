@@ -1,10 +1,117 @@
-<p style="color: green"><%= notice %></p>
+<div class = "anime-show-page-container">       
+    <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@anime.poster).html_safe}", class: "anime-show-background-image"%>    
+    <div class = "main-container-anime-show-page">   
+        <div class = "anime-show-characteristics-container">
+            <div class = "anime-show-poster-wrapper">
+                 <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@anime.poster).html_safe}", class: "anime-show-poster"%>  
+            </div>
+            <div class = "anime-details-container">
+                <div class = "anime-show-title-container">
+                    <div class ="anime-show-original-name-wrapper">
+                        <h3 class = "anime-show-original-name"><%=@anime.original_name %></h3>
+                    </div>
 
-<%= render @anime %>
+                    <div class = "anime-show-name-wrapper">
+                        <h1 class = "anime-show-name"><%=@anime.name %></h1>
+                        <div class = "anime-show-age-rating-wrapper">
+                            <%= image_tag "data:image/jpg;base64,#{Base64.encode64(@anime.age_rating).html_safe}", class: "anime-show-age-rating-image"%> 
+                        </div> 
+                    </div>
+                    
+                </div>
 
-<div>
-  <%= link_to "Edit this anime", edit_anime_path(@anime) %> |
-  <%= link_to "Back to animes", animes_path %>
+                <div class = "genres-container">
+                    <%@anime.genres.each do |genre|%>
+                    <div class = "genre-buttons">
+                        <span class = "genre-buttons-text">
+                            <%=genre.name%>
+                        </span>
+                    </div>
+                    <%end%>
+                </div>
 
-  <%= button_to "Destroy this anime", @anime, method: :delete %>
+                <div class = "anime-show-description-wrapper">
+                   <span class = "anime-show-description">
+                    <%=@anime.description %>
+                   </span>
+                </div>
+            </div>
+
+            <div class = "anime-show-details-values-container">
+
+                 <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('content-type.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                            <%=@anime.content_type %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('status.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                            <%=@anime.release_status %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('episodes.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                           <%=@anime.released_episodes%> / <%=@anime.total_episodes%>
+                        </span>
+                    </div>
+                </div>
+
+                 <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('calendar.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                            <%=@anime.release_date.year %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('studio.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                            <%=@anime.studio %>
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "anime-show-details-value-container">
+                    <div class = "anime-show-details-wrapper">
+                        <div class = "anime-show-details-icon-wrapper">
+                            <%= image_tag('director.png', :class => "anime-show-details-icon")%> 
+                        </div>
+                        <span class = "anime-show-details-value">
+                            <%=@anime.director %>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class = "anime-show-trailer-container">
+            <h2 class = "anime-show-trailer-title">Трейлер</h2>
+            <div class = "anime-show-trailer">
+               <iframe width="100%" height="100%" src="<%=@anime.trailer_link%>" frameborder="0" allowfullscreen></iframe> 
+            </div>
+        </div>
+    </div>
 </div>
