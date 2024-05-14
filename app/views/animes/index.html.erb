@@ -179,6 +179,28 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 </script>
 
 <script>
+
+    function fetchRequest(urlParams) {
+        fetch(`/anime_posters?${urlParams.toString()}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // or response.json() if your response is JSON
+            })
+            .then(data => {
+                document.getElementById("anime-posters").innerHTML = "";
+                document.getElementById("anime-posters").innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            })
+            .finally(() => {
+                // console.log(window.location);
+            });
+    }
+
+
     const genreButtons = document.querySelectorAll(".filter-genres-buttons");
     let urlParams;
     genreButtons.forEach(button => {
@@ -208,23 +230,7 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
         }
     }
     window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
-            fetch(`/anime_posters?${urlParams.toString()}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text(); // or response.json() if your response is JSON
-            })
-            .then(data => {
-                document.getElementById("anime-posters").innerHTML = "";
-                document.getElementById("anime-posters").innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            })
-            .finally(() => {
-                // console.log(window.location);
-            });
+            fetchRequest(urlParams);
         });
     });
 
@@ -256,24 +262,7 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
                 }
             }
             window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
-
-            fetch(`/anime_posters?${urlParams.toString()}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text(); // or response.json() if your response is JSON
-            })
-            .then(data => {
-                document.getElementById("anime-posters").innerHTML = "";
-                document.getElementById("anime-posters").innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            })
-            .finally(() => {
-                // console.log(window.location);
-            });
+            fetchRequest(urlParams);
         });
     });
 
@@ -305,25 +294,7 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
                 }
             }
             window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
-
-            console.log(urlParams); 
-            fetch(`/anime_posters?${urlParams.toString()}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text(); // or response.json() if your response is JSON
-            })
-            .then(data => {
-                document.getElementById("anime-posters").innerHTML = "";
-                document.getElementById("anime-posters").innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            })
-            .finally(() => {
-                // console.log(window.location);
-            });
+            fetchRequest(urlParams);
         });
     });
     
