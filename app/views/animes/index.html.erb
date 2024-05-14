@@ -277,6 +277,55 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
         });
     });
 
+    const typeButtons = document.querySelectorAll(".filter-type-buttons");
+    typeButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            typeButtons.forEach(btn => {
+                if (btn !== button) {
+                    btn.classList.remove("selected");
+                } else {
+                    button.classList.toggle("selected");
+                }
+            });
+
+            const type = button.innerText;
+            const urlParams = new URLSearchParams(window.location.search);
+            if (window.location.search === '') {
+                urlParams.set('type', type);
+            } else {
+                if (urlParams.has('type')) {
+                    const currentType = urlParams.get('type');
+                    if (currentType === type) {
+                        urlParams.delete('type');
+                    } else {
+                        urlParams.set('type', type);
+                    }
+                } else {
+                    urlParams.set('type', type);
+                }
+            }
+            window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
+
+            console.log(urlParams); 
+            fetch(`/anime_posters?${urlParams.toString()}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text(); // or response.json() if your response is JSON
+            })
+            .then(data => {
+                document.getElementById("anime-posters").innerHTML = "";
+                document.getElementById("anime-posters").innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            })
+            .finally(() => {
+                // console.log(window.location);
+            });
+        });
+    });
     
     document.addEventListener("DOMContentLoaded", function() {
         const search = window.location.search;
@@ -285,9 +334,11 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
             const urlParams = new URLSearchParams(search);
             const genres = urlParams.get('genre')?.split(',');
             const status = urlParams.get('status')?.split(',');
+            const type = urlParams.get('type')?.split(',');
 
             const genreBtns = Array.from(document.getElementsByClassName('filter-genres-buttons'));
             const statusBtns = Array.from(document.getElementsByClassName('filter-status-buttons'));
+            const typeBtns = Array.from(document.getElementsByClassName('filter-type-buttons'));
             
             if (genres && genres.length > 0) {
                 genreBtns.forEach(genreBtn => {
@@ -305,6 +356,17 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 
                     if (status.includes(statusText)) {
                         statusBtn.classList.add('selected');
+                        return;
+                    }
+                });
+            }
+
+            if (type) {
+                typeBtns.forEach(typeBtn => {
+                    const typeText = typeBtn.querySelector('.filter-buttons-text').textContent.trim();
+
+                    if (type.includes(typeText)) {
+                        typeBtn.classList.add('selected');
                         return;
                     }
                 });

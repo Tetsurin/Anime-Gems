@@ -6,7 +6,8 @@ class AnimesController < ApplicationController
     @animes = Anime.all
     @genres = Genre.all
     selected_genres = params[:genre]&.split(',') || []
-    selected_status = params[:status] || ''
+    selected_status = params[:status] || false
+    selected_type = params[:type] || false
     genre_ids = Genre.where(name: selected_genres).pluck(:id)
 
     @animes = genre_ids.empty? ? Anime.all : Anime
@@ -15,9 +16,13 @@ class AnimesController < ApplicationController
       .group('animes.id')
       .having('COUNT(DISTINCT genres.id) = ?', genre_ids.count)
 
-    if selected_status != ''
+    if selected_status
       selected_status = selected_status.capitalize
       @animes = @animes.where(release_status: selected_status)
+    end
+
+    if selected_type
+      @animes = @animes.where(content_type: selected_type)
     end
 
     @pagy, @animes = pagy(@animes)
@@ -26,7 +31,8 @@ class AnimesController < ApplicationController
   def _anime_posters
     @genres = Genre.all
     selected_genres = params[:genre]&.split(',') || []
-    selected_status = params[:status] || ''
+    selected_status = params[:status] || false
+    selected_type = params[:type] || false
 
     genre_ids = Genre.where(name: selected_genres).pluck(:id)
     @animes = genre_ids.empty? ? Anime.all : Anime
@@ -35,9 +41,13 @@ class AnimesController < ApplicationController
       .group('animes.id')
       .having('COUNT(DISTINCT genres.id) = ?', genre_ids.count)
 
-    if selected_status != ''
+    if selected_status
       selected_status = selected_status.capitalize
       @animes = @animes.where(release_status: selected_status)
+    end
+
+    if selected_type
+      @animes = @animes.where(content_type: selected_type)
     end
       
     @pagy, @animes = pagy(@animes)

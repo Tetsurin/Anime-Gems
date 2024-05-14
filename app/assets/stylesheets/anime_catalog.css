@@ -192,16 +192,18 @@
   user-select: none;
 }
 
-.filter-genres-buttons:hover, .filter-status-buttons:hover {
+.filter-genres-buttons:hover, .filter-status-buttons:hover, .filter-type-buttons:hover {
   cursor: pointer;
   border-color: #00d873;
 }
 
-.filter-genres-buttons.selected, .filter-status-buttons.selected{
+.filter-genres-buttons.selected, .filter-status-buttons.selected, .filter-type-buttons.selected {
   background-color: #00d873;
 }
 
-.filter-genres-buttons.selected .filter-buttons-text, .filter-status-buttons.selected .filter-buttons-text{
+.filter-genres-buttons.selected .filter-buttons-text, 
+.filter-status-buttons.selected .filter-buttons-text,
+.filter-type-buttons.selected .filter-buttons-text {
   color: black;
 }
 
