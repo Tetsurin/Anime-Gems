@@ -1,6 +1,7 @@
 <div class = "catalog-grid-wrapper">
     <h2 class = "anime-catalog-title">Каталог аніме</h2>
     <section class="catalog-grid">
+        <% unless @animes.nil? %>
         <% @animes.each do |anime| %>
             <%= link_to anime_path(anime) do %>
                 <div class="catalog-anime-items">
@@ -17,8 +18,11 @@
                 </div>
             <% end %>
         <% end %>
+        <% end %>
     </section>
-    <%== pagy_bootstrap_nav(@pagy, anchor_string: 'data-action="anime#_anime_posters"')%>
+    <% unless @pagy.nil? %>
+        <%== pagy_bootstrap_nav(@pagy, anchor_string: 'data-action="anime#_anime_posters"')%>
+    <% end %>
 </div>
 
 <script>

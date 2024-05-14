@@ -72,7 +72,7 @@
         </div>
 
        <div id="anime-posters"> 
-            <%=render"anime_posters"%>
+            <%= render"anime_posters" %>
        </div> 
     </div>
 </div>
@@ -372,6 +372,8 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
                 });
             }
         }
+        // get all requests after init
+        fetchRequest(new URLSearchParams(search));
     });
 
 
