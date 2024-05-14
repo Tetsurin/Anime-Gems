@@ -192,16 +192,16 @@
   user-select: none;
 }
 
-.filter-genres-buttons:hover{
+.filter-genres-buttons:hover, .filter-status-buttons:hover {
   cursor: pointer;
   border-color: #00d873;
 }
 
-.filter-genres-buttons.selected{
+.filter-genres-buttons.selected, .filter-status-buttons.selected{
   background-color: #00d873;
 }
 
-.filter-genres-buttons.selected .filter-buttons-text{
+.filter-genres-buttons.selected .filter-buttons-text, .filter-status-buttons.selected .filter-buttons-text{
   color: black;
 }
 

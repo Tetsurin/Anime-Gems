@@ -3,38 +3,43 @@ class AnimesController < ApplicationController
 
   # GET /animes or /animes.json
   def index
-    #@pagy, @animes = pagy(Anime.all)
     @animes = Anime.all
     @genres = Genre.all
     selected_genres = params[:genre]&.split(',') || []
-    puts("!!!")
-    puts(selected_genres)
-    @animes = @animes.joins(:genres).where(genres: {name: selected_genres}) if selected_genres.any?
-
-    puts(@animes)
-    @pagy, @animes = pagy(@animes)
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
-    # render :index, layout: selected_genres.empty? ? true : false
-    # if selected_genres.empty?
-    #   render :index
-    # else
-    #   render :_anime_posters
-    # end
-  end
-
-  def _anime_posters
-    @animes = Anime.all
-    @genres = Genre.all
-    selected_genres = params[:genre]&.split(',') || []
+    selected_status = params[:status] || ''
     genre_ids = Genre.where(name: selected_genres).pluck(:id)
-    @animes = @animes
+
+    @animes = genre_ids.empty? ? Anime.all : Anime
       .joins(:genres)
       .where(genres: { id: genre_ids })
       .group('animes.id')
       .having('COUNT(DISTINCT genres.id) = ?', genre_ids.count)
+
+    if selected_status != ''
+      selected_status = selected_status.capitalize
+      @animes = @animes.where(release_status: selected_status)
+    end
+
+    @pagy, @animes = pagy(@animes)
+  end
+
+  def _anime_posters
+    @genres = Genre.all
+    selected_genres = params[:genre]&.split(',') || []
+    selected_status = params[:status] || ''
+
+    genre_ids = Genre.where(name: selected_genres).pluck(:id)
+    @animes = genre_ids.empty? ? Anime.all : Anime
+      .joins(:genres)
+      .where(genres: { id: genre_ids })
+      .group('animes.id')
+      .having('COUNT(DISTINCT genres.id) = ?', genre_ids.count)
+
+    if selected_status != ''
+      selected_status = selected_status.capitalize
+      @animes = @animes.where(release_status: selected_status)
+    end
+      
     @pagy, @animes = pagy(@animes)
   end
 
