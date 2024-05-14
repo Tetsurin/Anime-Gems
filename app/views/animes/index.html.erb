@@ -298,6 +298,35 @@ toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
         });
     });
     
+    function updateUrlParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('from', fromInput.value);
+        urlParams.set('to', toInput.value);
+        window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);
+        fetchRequest(urlParams);
+    }
+
+    // const fromInput = document.getElementById('fromInput');
+    // const toInput = document.getElementById('toInput');
+    // const fromSlider = document.getElementById('fromSlider');
+    // const toSlider = document.getElementById('toSlider');
+
+    console.log(toSlider)
+
+    fromSlider.addEventListener('mouseup', function() {
+        updateUrlParams();
+        const fromValue = fromInput.value;
+        const toValue = toInput.value;
+        console.log('From:', fromValue, 'To:', toValue);
+    });
+
+    toSlider.addEventListener('mouseup', function() {
+        updateUrlParams();
+        const fromValue = fromInput.value;
+        const toValue = toInput.value;
+        console.log('From:', fromValue, 'To:', toValue);
+    });
+
     document.addEventListener("DOMContentLoaded", function() {
         const search = window.location.search;
 

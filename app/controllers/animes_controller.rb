@@ -8,6 +8,8 @@ class AnimesController < ApplicationController
     selected_genres = params[:genre]&.split(',') || []
     selected_status = params[:status] || false
     selected_type = params[:type] || false
+    from_date = params[:from] || false
+    to_date = params[:to] || false
     genre_ids = Genre.where(name: selected_genres).pluck(:id)
 
     @animes = genre_ids.empty? ? Anime.all : Anime
@@ -23,6 +25,12 @@ class AnimesController < ApplicationController
 
     if selected_type
       @animes = @animes.where(content_type: selected_type)
+    end
+
+    if from_date && to_date
+      from_date = Date.new(from_date.to_i, 1, 1)
+      to_date = Date.new(to_date.to_i, 12, 31).end_of_day
+      @animes = @animes.where(release_date: from_date..to_date)
     end
 
     @pagy, @animes = pagy(@animes)
@@ -33,6 +41,8 @@ class AnimesController < ApplicationController
     selected_genres = params[:genre]&.split(',') || []
     selected_status = params[:status] || false
     selected_type = params[:type] || false
+    from_date = params[:from] || false
+    to_date = params[:to] || false
 
     genre_ids = Genre.where(name: selected_genres).pluck(:id)
     @animes = genre_ids.empty? ? Anime.all : Anime
@@ -49,7 +59,13 @@ class AnimesController < ApplicationController
     if selected_type
       @animes = @animes.where(content_type: selected_type)
     end
-      
+
+    if from_date && to_date
+      from_date = Date.new(from_date.to_i, 1, 1)
+      to_date = Date.new(to_date.to_i, 12, 31).end_of_day
+      @animes = @animes.where(release_date: from_date..to_date)
+    end
+
     @pagy, @animes = pagy(@animes)
   end
 
